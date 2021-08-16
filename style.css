@@ -1,0 +1,74 @@
+body{
+    background-image: url(./images/wallpaper\ churrasco.jpg);
+}
+.container{
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+header{
+    background-color: goldenrod;  
+    border-radius: 10px; 
+    margin: auto; 
+    margin-top: 10px;
+    text-align: center;
+    width: 90%;
+}
+h1{
+    padding: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.pessoas{
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.carnes{
+    width: 100px;
+}
+.carnes1{
+    height: 900px;
+}
+h2{
+    width: 91%;
+    font-size: 30px;
+    margin-left: 25px;
+}
+#opcoes{
+    background-color: white;
+    width: 91%;
+    text-align: center;
+    margin-left: 25px;
+}
+button{
+    width: 91%;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: red;
+    border: red;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: white;
+    color: red;
+}
+.pdoscalculos{
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}

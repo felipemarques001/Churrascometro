@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churrascômetro</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Churrascômetro</h1>
+        </header>
+
+        <main>
+            <input id="homens" class="pessoas" type="number" placeholder="Quantos homens?">
+            <input id="mulheres" class="pessoas" type="number" placeholder="Quantas mulheres?">
+            <input id="crianças" class="pessoas" type="number" placeholder="Quantas crianças?">
+            <input id="duração" class="pessoas" type="number" placeholder="Quantas horas de duração?">
+
+            <h2>O cálculo é feito com base que o seu churrasco irá servir:</h2>
+            <div id="opcoes">
+                <img class="carnes" src="./images/carne de boi.jpg">
+                <img class="carnes" src="./images/carne de frango.jpg">
+                <img class="carnes" src="./images/refrigerante.jpg">
+                <img class="carnes" src="./images/cerveja.jpg">
+            </div>
+        </main>
+
+        <footer>
+            <button id="botao">Calcular</button>
+            <p id="pdecalculos"></p>
+        </footer>
+        
+
+    <script>
+        //pegando os input
+        var h = document.getElementById("homens");
+        var m = document.getElementById("mulheres");
+        var c = document.getElementById("crianças");
+        var d = document.getElementById("duração");
+        var b = document.getElementById("botao");
+        var pc = document.getElementById("pdecalculos");
+
+        function salvandoosP(){
+            if(totalBoi > 0 ){
+                var pBoi = document.createElement("p");
+                var tBoi = document.createTextNode("Irá ser necessário " + totalBoi + "KG de carne de boi!!!")
+                pBoi.appendChild(tBoi);
+                pBoi.classList.add("pdoscalculos");
+                pc.appendChild(pBoi);
+            }
+            
+            if(totalFrango > 0 ){
+                var pFrango = document.createElement("p");
+                var tFrango = document.createTextNode("Irá ser necessário " + totalFrango + "KG de carne de frango!!!")
+                pFrango.appendChild(tFrango)
+                pFrango.classList.add("pdoscalculos");
+                pc.appendChild(pFrango);
+            }
+        
+            if(totalRefrigerante > 0 ){
+                var pRefrigerante = document.createElement("p");
+                var tRefrigerante = document.createTextNode("Irá ser necessário " + totalRefrigerante + " litros de refrigerante!!!")
+                pRefrigerante.appendChild(tRefrigerante);
+                pRefrigerante.classList.add("pdoscalculos");
+                pc.appendChild(pRefrigerante);
+            }
+            if(totalCerveja1 > 0 ){
+                var pCerveja = document.createElement("p");
+                var tCerveja = document.createTextNode("Irá ser necessário " + totalCerveja1 + " latas de cerveja!!!")
+                pCerveja.appendChild(tCerveja);
+                pCerveja.classList.add("pdoscalculos");
+                pc.appendChild(pCerveja)
+            }
+        }
+        function calcBoi(){
+            var boiH = h.value * 200 * d.value;
+            var boiM = m.value * 150 * d.value;
+            var boiC = c.value * 100 * d.value;
+            return totalBoi = (boiH + boiM + boiC) / 2000;
+        }
+        function calcFrango(){
+            var frangoH = h.value * 100 * d.value;
+            var frangoM = m.value * 80 * d.value;
+            var frangoC = c.value * 50 * d.value;
+           return totalFrango = (frangoH + frangoM + frangoC) / 2000;
+        }
+        function calcRefrigerante(){
+            var refrigeranteH = h.value * 100 * (d.value/2);
+            var refrigeranteM = m.value * 100 * (d.value/2);
+            var refrigeranteC = c.value * 150 * (d.value/2);
+            return totalRefrigerante = (refrigeranteH + refrigeranteM + refrigeranteC) / 1000;
+        }
+        function calcCerveja(){
+            var cervejaH = h.value * 200 * d.value;
+            var cervejaM = m.value * 150 * d.value;
+            var totalCerveja = (cervejaH + cervejaM) / 350;
+            return totalCerveja1 = Math.floor(totalCerveja);
+        }
+        
+        b.onclick = calculos;
+        function calculos(){
+            calcBoi();
+            calcFrango();
+            calcRefrigerante();
+            calcCerveja();
+            salvandoosP();
+        }
+
+    </script>
+</body>
+</html>
